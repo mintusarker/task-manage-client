@@ -6,6 +6,7 @@ import CompleteTask from "../Pages/Task/CompleteTask/CompleteTask";
 import Details from "../Pages/Task/Media/Details";
 import Media from "../Pages/Task/Media/Media";
 import MyTask from "../Pages/Task/MyTask/MyTask";
+import PrivateRoute from "./PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../Layout/Main");
@@ -45,8 +46,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myTask/:id',
-                element: <Details></Details>,
-                loader: ({ params }) => fetch(`http://localhost:5000/myTask/${params._id}`)
+                element: <PrivateRoute><Details></Details></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/myTask/${params.id}`)
             },
         ]
     }

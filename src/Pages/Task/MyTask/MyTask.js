@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Button, Table } from 'flowbite-react';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-hot-toast';
+import Task from './Task';
 
 const MyTask = () => {
     // const [myTasks, setMyTasks] = useState([])
@@ -34,13 +35,11 @@ const MyTask = () => {
             })
     };
 
-    const handleUbmitComplete = event => {
-        
-    }
+    
     return (
         <div>
             <h2 className='text-3xl my-16 font-medium text-red-700 text-center'>My Tasks</h2>
-            <div className='mx-20'>
+            {/* <div className='mx-20'>
                 <Table>
                     <Table.Head>
                         <Table.HeadCell className='text-rose-600'>
@@ -55,11 +54,7 @@ const MyTask = () => {
                         <Table.HeadCell className='text-rose-600'>
                             Completed
                         </Table.HeadCell>
-                        {/* <Table.HeadCell>
-                            <span className="sr-only">
-                                Edit
-                            </span>
-                        </Table.HeadCell> */}
+                       
                     </Table.Head>
                     <Table.Body className="divide-y">
                         {
@@ -81,6 +76,17 @@ const MyTask = () => {
 
                     </Table.Body>
                 </Table>
+            </div> */}
+
+            <div className='gap-6 px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                {
+                    myTasks?.map(myTask => <Task
+                        key={myTask?._id}
+                        myTask={myTask}
+                        handleDelete={handleDelete}
+                        refetch={refetch}
+                    ></Task>)
+                }
             </div>
         </div>
     );

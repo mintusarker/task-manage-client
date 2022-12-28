@@ -72,15 +72,6 @@ const AddTask = () => {
                         {errors.price && <p className='text-red-600'>{errors.time.message}</p>}
                     </div>
 
-
-                    {/* <div className="form-control w-full max-w-xs">
-                        <label className="label"><span className="label-text">Task Detail</span></label>
-                        <input type="text" className="input input-bordered w-full max-w-xs" {...register("detail", {
-                            required: "Description is required"
-                        })} />
-                        {errors.detail && <p className='text-red-600'>{errors.detail.message}</p>}
-                    </div> */}
-
                     <div className="form-control w-full max-w-xs">
                         <label className="label"><span className="label-text">Task Detail</span></label>
                         <textarea id="comment" rows="4" class="border w-full max-w-xs p-2 text-sm" placeholder="Write task details..." {...register("detail", {
@@ -88,16 +79,6 @@ const AddTask = () => {
                         })}></textarea>
                         {errors.detail && <p className='text-red-600'>{errors.detail.message}</p>}
                     </div>
-
-
-                    {/* <div className="form-control w-full max-w-xs">
-                    <label className="label"><span className="label-text">Year of Purchase</span></label>
-                    <input type="text" className="input input-bordered w-full max-w-xs" {...register("time", {
-                        required: "Time is required"
-                    })} />
-                    {errors.time && <p className='text-red-600'>{errors.time.message}</p>}
-                </div> */}
-
 
                     <div className="form-control w-full max-w-xs">
                         <label className="label"><span className="label-text">Photo</span></label>
