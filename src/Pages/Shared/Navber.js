@@ -34,6 +34,7 @@ const Navber = () => {
                     <Link to='/addtask'><Button className='my-2' color='light'>Add Task</Button></Link>
                     <Link to='/mytask'><Button className='my-2' color='light'>My Task</Button></Link>
                     <Link to='/completetask'><Button className='my-2' color='light'>Complete Task</Button></Link>
+                    <Link to='/media'><Button className='my-2' color='light'>Media Route</Button></Link>
                     {/* <Link to='/login'><Button className='my-2' color='light'>Login</Button></Link>
                     <Link to='/signup'><Button className='my-2' color='light'>Sign Up</Button></Link> */}
                    {

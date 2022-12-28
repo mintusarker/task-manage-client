@@ -3,6 +3,8 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import AddTask from "../Pages/Task/AddTask/AddTask";
 import CompleteTask from "../Pages/Task/CompleteTask/CompleteTask";
+import Details from "../Pages/Task/Media/Details";
+import Media from "../Pages/Task/Media/Media";
 import MyTask from "../Pages/Task/MyTask/MyTask";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -36,6 +38,15 @@ const router = createBrowserRouter([
             {
                 path: '/completetask',
                 element: <CompleteTask></CompleteTask>
+            },
+            {
+                path: '/media',
+                element: <Media></Media>
+            },
+            {
+                path: '/myTask/:id',
+                element: <Details></Details>,
+                loader: ({ params }) => fetch(`http://localhost:5000/myTask/${params._id}`)
             },
         ]
     }
