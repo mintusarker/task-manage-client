@@ -1,5 +1,4 @@
 import React from 'react';
-import AddTask from '../Task/AddTask/AddTask';
 import DailyTask from '../Task/MyTask/DailyTask';
 
 const Home = () => {

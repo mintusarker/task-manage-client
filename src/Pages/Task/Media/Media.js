@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import { Button, Card } from 'flowbite-react';
+import { Button, Card, Spinner } from 'flowbite-react';
 import React from 'react';
 import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
@@ -28,6 +28,18 @@ const Media = () => {
         }
       })
   };
+
+  if(isLoading){
+    return <div className='w-40 mx-auto'> <Button outline={true}>
+    <div className="mr-3">
+      <Spinner
+        size="sm"
+        light={true}
+      />
+    </div>
+    Loading ...
+  </Button></div>
+  }
 
   return (
     <div className='px-16'>
