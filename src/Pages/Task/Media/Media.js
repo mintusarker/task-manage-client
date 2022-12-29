@@ -1,17 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import { Button, Card } from 'flowbite-react';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { toast } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 const Media = () => {
-
-  // const [tasks, setTasks] = useState([])
-  // useEffect(() => {
-  //   fetch('http://localhost:5000/myTask')
-  //     .then(res => res.json())
-  //     .then(data => setTasks(data))
-  // }, [])
 
   const { data: tasks = [], isLoading, refetch } = useQuery({
     queryKey: ['myTasks'],
@@ -37,10 +30,10 @@ const Media = () => {
   };
 
   return (
-    <div>
+    <div className='px-16'>
       <h2 className='text-3xl text-center my-10 text-red-600'>Media Route</h2>
 
-      <div className='gap-10 px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+      <div className='gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {
           tasks?.map(task => <div className="max-w-sm">
             <Card className='h-full' imgSrc={task?.image}>
@@ -59,8 +52,6 @@ const Media = () => {
                 </Button>
 
               </div>
-              {/* <Link to={`/task/${task?._id}`}><button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full max-w-xs my-5 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Details</button></Link> */}
-
             </Card>
           </div>)
         }

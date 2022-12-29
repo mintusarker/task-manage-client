@@ -1,6 +1,6 @@
 import { Button, Card } from 'flowbite-react';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Task = ({ myTask, refetch, handleDelete }) => {
     const { task } = myTask;
@@ -33,7 +33,7 @@ const Task = ({ myTask, refetch, handleDelete }) => {
                 <p>{task}</p>
                 <div className='flex gap-2 mx-auto'>
                 <Button onClick={handleComplete} gradientDuoTone="greenToBlue" size="sm">Completed</Button>
-                <Button gradientDuoTone="purpleToPink" size="sm">Update</Button>
+                <Link to={`/update/${myTask?._id}`}><Button gradientDuoTone="purpleToPink" size="sm">Update</Button></Link>
                 <Button onClick={() => handleDelete(myTask?._id)} size="sm" gradientDuoTone="pinkToOrange">Delete</Button>
                 </div>
             </Card>

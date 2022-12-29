@@ -6,6 +6,7 @@ import CompleteTask from "../Pages/Task/CompleteTask/CompleteTask";
 import Details from "../Pages/Task/Media/Details";
 import Media from "../Pages/Task/Media/Media";
 import MyTask from "../Pages/Task/MyTask/MyTask";
+import Update from "../Pages/Task/MyTask/Update";
 import PrivateRoute from "./PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/myTask/${params.id}`)
             },
+            {
+                path: '/update/:id',
+                element: <Update></Update>,
+                loader: ({params}) => fetch(`http://localhost:5000/addTask/${params.id}`)
+            }
         ]
     }
 ])
