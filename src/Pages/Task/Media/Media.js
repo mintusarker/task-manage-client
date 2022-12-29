@@ -9,14 +9,14 @@ const Media = () => {
   const { data: tasks = [], isLoading, refetch } = useQuery({
     queryKey: ['myTasks'],
     queryFn: async () => {
-        const res = await fetch('http://localhost:5000/myTask');
-        const data = await res.json();
-        return data
+      const res = await fetch('https://my-task-server-ebon.vercel.app/myTask');
+      const data = await res.json();
+      return data
     }
-})
+  })
 
   const handleDeleteProduct = id => {
-    fetch(`http://localhost:5000/myTask/${id}`, {
+    fetch(`https://my-task-server-ebon.vercel.app/myTask/${id}`, {
       method: 'DELETE'
     })
       .then(res => res.json())
@@ -29,16 +29,16 @@ const Media = () => {
       })
   };
 
-  if(isLoading){
+  if (isLoading) {
     return <div className='w-40 mx-auto'> <Button outline={true}>
-    <div className="mr-3">
-      <Spinner
-        size="sm"
-        light={true}
-      />
-    </div>
-    Loading ...
-  </Button></div>
+      <div className="mr-3">
+        <Spinner
+          size="sm"
+          light={true}
+        />
+      </div>
+      Loading ...
+    </Button></div>
   }
 
   return (
@@ -47,8 +47,9 @@ const Media = () => {
 
       <div className='gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {
-          tasks?.map(task => <div className="max-w-sm">
-            <Card className='h-full' imgSrc={task?.image}>
+          tasks?.map(task => <div className="my-3 max-w-sm">
+            <Card className='h-full'>
+              <img className='h-60' src={task?.image} alt="" />
               <h5 className="text-2xl font-semibold tracking-tight dark:text-white">
                 Task Name : {task?.name}
               </h5>
@@ -59,7 +60,7 @@ const Media = () => {
                 <Link to={`/myTask/${task?._id}`}><Button className='w-32' gradientDuoTone="purpleToBlue">
                   Detail
                 </Button></Link>
-                <Button onClick={()=>handleDeleteProduct(task?._id)} className='w-32' gradientDuoTone="cyanToBlue">
+                <Button onClick={() => handleDeleteProduct(task?._id)} className='w-32' gradientDuoTone="pinkToOrange">
                   Delete
                 </Button>
 

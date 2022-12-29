@@ -9,14 +9,14 @@ const CompleteTask = () => {
     const { data: completes = [], isLoading, refetch } = useQuery({
         queryKey: ['completeTask'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/completeTask');
+            const res = await fetch('https://my-task-server-ebon.vercel.app/completeTask');
             const data = await res.json();
             return data
         }
     })
 
     const handleTaskDelete = id => {
-        fetch(`http://localhost:5000/completeTask/${id}`, {
+        fetch(`https://my-task-server-ebon.vercel.app/completeTask/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -29,38 +29,38 @@ const CompleteTask = () => {
             })
     };
 
-    if(isLoading){
+    if (isLoading) {
         return <div className='w-40 mx-auto'> <Button outline={true}>
-        <div className="mr-3">
-          <Spinner
-            size="sm"
-            light={true}
-          />
-        </div>
-        Loading ...
-      </Button></div>
-      }
+            <div className="mr-3">
+                <Spinner
+                    size="sm"
+                    light={true}
+                />
+            </div>
+            Loading ...
+        </Button></div>
+    }
     return (
-        <div>
+        <div className='pl-16 mx-5'>
             <h1 className='text-2xl text-center text-rose-600 my-8'>Complete Task</h1>
-            <div className='gap-6 px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            <div className='gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     completes.map(complete => <div className="max-w-sm">
                         <Card>
                             <h5 className="text-xl font-semibold text-gray-900 dark:text-white">
-                               Task Details:
+                                Task Details:
                             </h5>
                             <p className="font-normal text-gray-700 dark:text-gray-400">
-                               {complete?.task}
+                                {complete?.task}
                             </p>
                             <div className="flex gap-2 mx-auto">
                                 <div>
-                                    <Button onClick={()=>handleTaskDelete(complete?._id)} gradientDuoTone="greenToBlue">
+                                    <Button onClick={() => handleTaskDelete(complete?._id)} gradientDuoTone="greenToBlue">
                                         Delete
                                     </Button>
                                 </div>
                                 <div>
-                                   <Link to='/mytask'><Button gradientDuoTone="purpleToPink">
+                                    <Link to='/mytask'><Button gradientDuoTone="purpleToPink">
                                         Not Completed
                                     </Button></Link>
                                 </div>

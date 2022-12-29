@@ -9,35 +9,35 @@ const Update = () => {
     console.log(storeReview)
     const [user, setUser] = useState(storeReview)
 
-    
-    const handleUpdateUser = event =>{
+
+    const handleUpdateUser = event => {
         event.preventDefault();
         console.log(user);
-        fetch(`http://localhost:5000/addTask/${storeReview._id}` ,{
+        fetch(`https://my-task-server-ebon.vercel.app/addTask/${storeReview._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(user)
         })
-        .then(res => res.json())
-        .then(data => {
-        if(data.modifiedCount > 0){
-            toast.success('Task Updated')
-            console.log(data);
-        }
-            
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    toast.success('Task Updated')
+                    console.log(data);
+                }
+
+            })
     }
 
-    const handleInputChange = event =>{
+    const handleInputChange = event => {
         const field = event.target.name;
         const value = event.target.value;
-        const newUser = {...user};
+        const newUser = { ...user };
         newUser[field] = value;
         setUser(newUser);
     }
-    
+
     return (
         <div className='my-32 border w-1/2 p-4 mx-auto'>
             <h2 className='text-center text-rose-600 mb-3 font-semibold text-xl'>Update Task: </h2>

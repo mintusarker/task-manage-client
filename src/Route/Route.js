@@ -48,12 +48,12 @@ const router = createBrowserRouter([
             {
                 path: '/myTask/:id',
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/myTask/${params.id}`)
+                loader: ({ params }) => fetch(`https://my-task-server-ebon.vercel.app/myTask/${params.id}`)
             },
             {
                 path: '/update/:id',
                 element: <Update></Update>,
-                loader: ({params}) => fetch(`http://localhost:5000/addTask/${params.id}`)
+                loader: ({ params }) => fetch(`https://my-task-server-ebon.vercel.app/addTask/${params.id}`)
             }
         ]
     }

@@ -9,14 +9,14 @@ const MyTask = () => {
     const { data: myTasks = [], isLoading, refetch } = useQuery({
         queryKey: ['myTasks'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/addTask');
+            const res = await fetch('https://my-task-server-ebon.vercel.app/addTask');
             const data = await res.json();
             return data
         }
     })
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/addTask/${id}`, {
+        fetch(`https://my-task-server-ebon.vercel.app/addTask/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())
@@ -40,7 +40,7 @@ const MyTask = () => {
             Loading ...
         </Button></div>
     }
-    
+
     return (
         <div>
             <h2 className='text-3xl my-16 font-medium text-red-700 text-center'>My Tasks</h2>

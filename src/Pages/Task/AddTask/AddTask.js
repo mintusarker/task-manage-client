@@ -34,7 +34,7 @@ const AddTask = () => {
 
                     console.log(task)
 
-                    fetch('http://localhost:5000/myTask', {
+                    fetch('https://my-task-server-ebon.vercel.app/myTask', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -87,7 +87,7 @@ const AddTask = () => {
                         })} />
                         {errors.image && <p className='text-red-600'>{errors.image.message}</p>}
                     </div>
-                    
+
                     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full max-w-xs my-5 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Task</button>
 
                 </form>

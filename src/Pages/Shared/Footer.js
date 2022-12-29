@@ -2,8 +2,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='mt-28 lg:mb-0'>
-            <footer className="p-4  bg-gray-300 md:px-6 md:py-8 dark:bg-gray-900">
+        <div className='mt-44 lg:mb-0'>
+            <footer className="p-4 bg-gray-300 md:px-6 md:py-8 dark:bg-gray-900">
                 <div className="sm:flex px-5 sm:items-center sm:justify-between">
                     <a href="/" className="flex items-center mb-4 sm:mb-0">
                         <img src="https://cdn-icons-png.flaticon.com/512/906/906334.png" className="mr-3 h-8" alt=""/>
