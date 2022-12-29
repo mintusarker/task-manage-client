@@ -5,6 +5,7 @@ import AddTask from "../Pages/Task/AddTask/AddTask";
 import CompleteTask from "../Pages/Task/CompleteTask/CompleteTask";
 import Details from "../Pages/Task/Media/Details";
 import Media from "../Pages/Task/Media/Media";
+import Comment from "../Pages/Task/MyTask/Comment";
 import MyTask from "../Pages/Task/MyTask/MyTask";
 import Update from "../Pages/Task/MyTask/Update";
 import PrivateRoute from "./PrivateRoute";
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: '/completetask',
                 element: <CompleteTask></CompleteTask>
+            },
+            {
+                path: '/comment',
+                element: <Comment></Comment>
             },
             {
                 path: '/media',

@@ -64,6 +64,11 @@ const CompleteTask = () => {
                                         Not Completed
                                     </Button></Link>
                                 </div>
+                                <div>
+                                    <Link><Button gradientDuoTone="redToYellow">
+                                        Comment
+                                    </Button></Link>
+                                </div>
                             </div>
                         </Card>
                     </div>)
