@@ -1,4 +1,4 @@
-Live Link: [https://my-task-79bea.web.app/media](https://my-task-79bea.web.app/media).
+Live Link: [https://my-task-79bea.web.app/](https://my-task-79bea.web.app/).
 
 
 # Getting Started with Create React App
