@@ -43,7 +43,7 @@ const MyTask = () => {
 
     return (
         <div>
-            <h2 className='text-3xl my-16 font-medium text-red-700 text-center'>My Tasks</h2>
+            <h2 className='text-2xl my-16 font-medium text-rose-500 text-center'>My Tasks</h2>
             <div className='gap-6 px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                     myTasks?.map(myTask => <Task

@@ -32,7 +32,7 @@ const SignUp = () => {
 
 
     return (
-        <div className='w-1/2 mx-auto border-2 rounded my-24 p-5'>
+        <div className='sm:w-1/2 md:w-1/2 mx-auto rounded-sm my-24 p-5 lg:w-1/3 shadow-lg shadow-slate-500'>
             <h2 className='text-center text-3xl font-semibold my-5'>Sign Up</h2>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div>

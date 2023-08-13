@@ -53,7 +53,7 @@ const Login = () => {
             .catch(error => console.error(error));
     }
     return (
-        <div className='w-1/2 mx-auto border-2 rounded my-24 p-5'>
+        <div className='sm:w-1/2 md:w-1/2 mx-auto border-2 rounded my-24 p-5 lg:w-1/3 shadow-lg shadow-slate-500'>
             <h2 className='text-center text-3xl font-semibold my-5'>Login</h2>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div>
@@ -62,7 +62,7 @@ const Login = () => {
                             htmlFor="email1"
                             value="Your email"
                         />
-                    </div>
+                    </div> 
                     <TextInput
                         id="email1"
                         type="email"

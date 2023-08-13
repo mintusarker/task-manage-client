@@ -52,7 +52,7 @@ const DailyTask = () => {
                     <div className="form-control w-full max-w-xs">
                         <label className="label"><span className="label-text">Put Daily Task</span></label>
                         <input type="text" name='message' className="input input-bordered w-full max-w-xs" required />
-                        {/* <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full max-w-xs my-5 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add Task</button> */}
+                        <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full max-w-xs my-5 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">My Task</button>
                     </div>
                 </form>
             </div>
